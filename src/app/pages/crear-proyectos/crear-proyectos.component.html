@@ -1,0 +1,99 @@
+<div class="container">
+  <form autocomplete="off" [formGroup]="body" (ngSubmit)="guardar()">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title" align="center">Carga Proyectos <hr></h1>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Nombre</label>
+          <div class="col">
+              <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
+              <small *ngIf="nombreValido" class="text-danger">Completa este campo obligatorio</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Tipo</label>
+          <div class="col">
+              <select class="form-select" aria-label="Default select example" class="form-control" type="text" placeholder="Tipo" formControlName="tipo">
+                <option selected></option>
+                <option value="Seguras">Seguras</option>
+                <option value="CasiFalopas">CasiFalopas</option>
+                <option value="Falopas">Falopas</option>
+              </select>
+              <small *ngIf="tipoValido" class="text-danger">Completa este campo obligatorio</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Descripcion</label>
+          <div class="col">
+              <input class="form-control" type="text" placeholder="Descripcion" formControlName="descripcion">
+              <small *ngIf="descripcionValido" class="text-danger">Completa este campo obligatorio</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Porcentaje de Falopa</label>
+          <div class="col">
+              <input class="form-control" type="number" placeholder="0 a 100 ¿Que tan falopa es esta página?" formControlName="porcentaje">
+              <small *ngIf="porcentajeValido" class="text-danger">Completa este campo obligatorio</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">URL</label>
+          <div class="col">
+              <input class="form-control" type="text" placeholder="http://falopa.com" formControlName="url">
+              <small *ngIf="urlValido" class="text-danger">Completa este campo obligatorio</small>
+          </div>
+        </div>
+        <!-- <div class="form-group row">
+          <label class="col-2 col-form-label">Contrato</label>
+          <div class="col">
+              <input class="form-control" type="text" placeholder="0x0111aa11a1a1a1a1a1a1a11a" formControlName="contrato">
+              <small *ngIf="contratoValido" class="text-danger">Completa este campo obligatorio</small>
+          </div>
+        </div> -->
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Imagen</label>
+          <div class="col">
+              <input class="form-control" type="text" placeholder="http://URLIMAGEN.com" formControlName="img">
+              <small *ngIf="imgValido" class="text-danger">Completa este campo obligatorio</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+              <table class="table">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>ID</th>
+                          <th>Tokens</th>
+                          <th>Borrar</th>
+                      </tr>
+                  </thead>
+                  <tbody formArrayName="token">
+                      <tr *ngFor="let control of token.controls; let i = index">
+                          <td>{{i+1}}</td>
+                          <td>
+                              <input class="form-control" type="text" [formControlName]="i">
+                          </td>
+                          <td>
+                              <button class="btn btn-danger" (click)="borrarToken( i )">Borrar</button>
+                          </td>
+                          <td></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <button class="btn btn-primary mt-3 mb-5 btn-block" type="button" (click)="AgregarToken()">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success">Insertar</button>
+    </div>
+  </form>
+  <hr>
+  <form autocomplete="off" (ngSubmit)="borrarProyecto(proyecto)" #proyecto="ngForm">
+    <h1 class="card-title" align="center">Borrar Proyectos <hr></h1>
+    <select class="form-control" aria-label="Default select example" placeholder="Proyectos" name="proyectoid" #proyectoid="ngModel" [ngModel]>
+      <option selected></option>
+      <option [value]="proyecto._id" *ngFor="let proyecto of proyectos">{{proyecto.nombre}} | {{proyecto.tipo}}</option>
+    </select>
+    <button class="btn btn-danger centrar mt-3 mb-3" type="submit">Borrar</button>
+  </form>
+</div>

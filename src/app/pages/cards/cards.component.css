@@ -1,0 +1,35 @@
+.card{
+  width: 25rem;
+  height: 15rem;
+  background-color: #27262C;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px){
+  .card{
+    width: 21rem;
+    height: 15rem;
+  }
+}
+
+.tokens{
+  margin: 1%;
+}
+
+.card {
+  cursor: pointer;
+}
+
+/* Texto sobre imagen */
+#padre {
+  position: relative;
+}
+.porcentaje {
+  position: absolute;
+  bottom: 90%;
+  left: 75%;
+}

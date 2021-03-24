@@ -1,0 +1,16 @@
+
+.card{
+  background-color: #18181A;
+  border: 1px solid white;
+}
+button{
+  margin-left: 35%;
+}
+
+.col {
+  margin-bottom: 2%;
+}
+
+p{
+  text-align: center;
+}

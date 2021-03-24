@@ -1,0 +1,192 @@
+<div id="carouselExampleDark" class="carousel carousel-light slide mt-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" [attr.data-bs-slide-to]="i+1" *ngFor="let proyecto of proyectosCarousel; let i = index"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="../../../assets/imgs/carousel.jpg" class="d-block w-100" alt="slide1" width="360" height="360">
+      <div class="carousel-caption d-none d-md-block">
+        <span class="badge bg-dark"><h5>WEB con información de Yield Farming</h5></span>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000" *ngFor="let proyecto of proyectosCarousel">
+      <a [href]="proyecto.url" target="blank">
+        <img [src]="proyecto.img" class="d-block w-100" [alt]="proyecto.nombre" width="360" height="360">
+        <div class="carousel-caption d-none d-md-block texto">
+          <span class="badge bg-dark">
+            <h5>{{proyecto.nombre}}</h5>
+            <hr>
+            <br>
+            <p>{{proyecto.descripcion}}</p>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container mt-3">
+  <h1 align="center">Conceptos</h1>
+  <hr>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Farming</h5>
+          <p class="card-text">
+            Se busca establecer una estrategia de inversión por la cual los tenedores de tokens buscan maximizar sus ganancias. Para ello, los tenedores de tokens deben invertir y participar en varias plataformas DeFi mientras se busca la maximización de las ganancias en todo momento.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">¿Qué es una plataforma DEFI?</h5>
+          <p class="card-text">
+            DeFi es la abreviatura de “finanzas descentralizadas”, es la evolución de las conocidas FinTech que nacieron en el siglo XX. Su objetivo es ofrecer toda una serie de servicios construido sobre una infraestructura descentralizada. Una que permita la interacción del usuario con la plataforma directamente, dejando atrás a los intermediarios.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Yield Farming</h5>
+          <p class="card-text">
+            Es una forma de ganar más cripto con tus cripto. Consiste en prestar tus fondos a terceros gracias a la magia de unos programas de ordenador denominados smart contracts. A cambio de tu servicio, ganas unas comisiones en forma de cripto.
+            <br>El yield farming es el salvaje oeste de las Finanzas Descentralizadas (DeFi), donde los cultivadores compiten por tener la oportunidad de recoger las mejores cosechas.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Total Value Locked (TVL)</h5>
+          <p class="card-text">
+            Mide que cantidad de cripto hay bloqueada en depósito.<br>
+            Es la liquidez agregada en las liquidity pools.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Liquidity pools</h5>
+          <p class="card-text">
+            Constituyen una parte esencial de los automated market makers (AMM), protocolos de préstamos (borrow/lend), yield farming, activos sintéticos, coberturas de seguros on-chain, gaming basado en blockchain –la lista es interminable.
+            <br>
+            Es un conjunto de fondos bloqueados en depósito en un "smart contract".
+            <br>
+            Las "liquidity pools" son la columna vertebral de muchos exchanges descentralizados (DEX).
+            <br>
+            Un tipo de usuarios denominados proveedores de liquidez (LPs) aportan un valor equivalente de dos tokens en una reserva (pool) para así crear un mercado. A cambio de aportar sus fondos, ganarán comisiones de trading a partir de los trades que tengan lugar en su "pool" o reserva, de manera proporcional a su participación en la liquidez total.
+            <br>
+            Dado que cualquiera puede ser un proveedor de liquidez, los AMMs han hecho que el "market making" resulte más accesible.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Automated Maket Maker/Creador De Mercado Automatizado(AMM)</h5>
+          <p class="card-text">
+            Es un sistema que permite cotizar el precio entre dos activos.
+            <br>
+            Permite operar con confianza entre criptomonedas diferentes y además permite stakear para proporcionar liquidez a un pool.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Funcionamiento del Yield Farming</h5>
+          <p class="card-text">
+            Los proveedores de liquidez depositan fondos en una liquidity pool.
+            <br>
+            Dicha reserva alimenta un marketplace en el que los usuarios pueden conceder préstamos, tomar préstamos o intercambiar tokens. El uso de dichas plataformas entraña comisiones (fees), que son pagadas a los proveedores de liquidez en función de su cuota de la reserva de liquidez. Esta es la base de cómo funciona un AMM.
+            <br>
+            Además de las comisiones (fees), otro incentivo para añadir fondos a una reserva de liquidez podría ser la distribución de un nuevo token.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Stabelcoins más comunes</h5>
+          <p class="card-text">
+            DAI, USDT, USDC, BUSD
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">¿Cómo se calculan los retornos de yield farming?</h5>
+          <p class="card-text">
+            Se calculan de forma anualizada.
+            <br>
+            Algunas métricas habitualmente utilizadas son la Tasa Anual Equivalente (APY) y Porcentaje de Rendimiento Anual(APR).
+            <br>
+            La diferencia entre ambos es que la APR no tiene en cuenta el efecto del interés compuesto, mientras que la APY sí lo hace.
+            <br>
+            El interés compuesto, en este caso, significa reinvertir directamente los beneficios para generar un mayor retorno.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Colateralización</h5>
+          <p class="card-text">
+            Si estás pidiendo activos prestados, debes presentar una garantía para cubrir tu préstamo. Esto esencialmente actúa como un seguro para tu préstamo.
+            <br>
+            Si el valor de tu garantía cae por debajo del umbral requerido por el protocolo, tu garantía puede liquidarse en el mercado abierto.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-danger" align="center">Riesgo del Yield Farming</h5>
+          <p class="card-text">
+            El Yield farming no es sencillo. Las estrategias de cultivo de rendimiento más rentables son muy complejas y solo se recomiendan para usuarios avanzados.
+            <br>
+            El Yield farming no es tan fácil como parece, y si no comprendes lo que estás haciendo, probablemente vas a perder dinero.
+            <br>
+            Un riesgo obvio del Yield farming son los contratos inteligentes. Debido a la naturaleza de DeFi, muchos protocolos son creados y desarrollados por equipos pequeños con presupuestos limitados. Esto puede aumentar el riesgo de errores de contratos inteligentes.
+            <br>
+            Incluso en el caso de protocolos más grandes que son auditados por firmas de auditoría acreditadas, las vulnerabilidades y los errores se descubren todo el tiempo.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title bg-primary" align="center">Contratos Inteligentes</h5>
+          <p class="card-text">
+            Son un tipo de software que se programa, como cualquier otro software, para llevar a cabo una tarea o serie de tareas determinadas de acuerdo a las instrucciones previamente introducidas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

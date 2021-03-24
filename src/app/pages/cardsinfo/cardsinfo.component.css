@@ -1,0 +1,17 @@
+.card{
+  background-color: #27262C;
+}
+img{
+  background-color: #27262C;
+}
+.col-sm{
+  border: 2px solid hsla(200, 10%, 50%,100);
+}
+h5{
+  border-bottom: 2px solid hsla(200, 10%, 50%,100);
+  text-align: center;
+}
+.links{
+  text-decoration: none;
+  color: #FAF9FA;
+}

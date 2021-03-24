@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col mt-5" align="center">
+      <div class="card">
+        <div class="card-body">
+          <img [src]="proyectoInfo.img" alt="" class="img-thumbnail" width="350px" height="320px">
+          <h1 class="mt-1">{{proyectoInfo.nombre | uppercase}}</h1>
+          <a [href]="proyectoInfo.url" target="blank" class="links">
+            <button class="btn btn-primary">PÁGINA</button>
+          </a>
+        </div>
+        <button class="btn btn-danger" (click)="volver()">Volver</button>
+      </div>
+    </div>
+    <div class="col mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h1>Información Actualizada</h1>
+          <hr>
+          <h3>Tokens de la página: </h3>
+          <div class="row">
+            <div class="col-sm" *ngFor= "let token of tokensinfo; let i = index">
+              <h5>{{token.tokenresult.token | uppercase}}</h5>
+              <p>Contrato: {{token.tokenresult.contrato["binance-smart-chain"]}}</p>
+              <p>Precio USD: ${{token.tokenresult.priceusd}}</p>
+              <p>Precio ARS: ${{token.tokenresult.pricears}}</p>
+              <p>Capitalización USD: ${{token.tokenresult.marketcap}}</p>
+              <p>Máximo 24hs USD: ${{token.tokenresult.high_24hs}}</p>
+              <p>Mínimo 24hs USD: ${{token.tokenresult.low_24hs}}</p>
+              <p>Cambio 24hs: {{token.tokenresult.pricechange24hs}}%</p>
+              <p>Precio Máximo USD: ${{token.tokenresult.athusd}}</p>
+              <p>Precio Máximo ARS: ${{token.tokenresult.athars}}</p>
+              <p>Fecha Precio Máximo: {{token.tokenresult.athdate | date:'dd-MM-yyyy HH:mm:ss':'es-AR'}}</p>
+
+              <p>Rango Market Cap: {{token.tokenresult.marketcaprank}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div *ngFor="let item of tokensinfo">
+  {{item.tokenresult.token}}
+</div> -->

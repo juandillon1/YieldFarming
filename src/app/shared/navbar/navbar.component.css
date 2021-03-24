@@ -1,0 +1,26 @@
+#navbarSupportedContent{
+  margin-left: 25%;
+}
+a{
+  color: white !important;
+}
+nav{
+  background-color:#212121;
+}
+.logo{
+  margin-left:10%;
+}
+li{
+  border-bottom:1px solid;
+  margin-left: 5%;
+}
+li:hover, a:hover{
+  color: #BF1E2E !important;
+}
+.activelink{
+  background-color: #666666;
+}
+
+.navbar-toggler-icon{
+  background-image: url('../../../assets/imgs/navbar.png') !important;
+}

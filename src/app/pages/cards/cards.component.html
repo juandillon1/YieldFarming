@@ -1,0 +1,23 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3" *ngIf="!proyectosMostrar">
+  <div class="col mb-4" *ngFor="let pagina of segurasInput">
+    <div class="card h-100">
+      <a (click)="infoCards(pagina); volverEvent(true)">
+        <div class="card-body">
+          <div id = "padre">
+            <img [src]="pagina.img" class="card-img-top" alt="..." width="350px" height="320px">
+            <span class="badge bg-primary tokens" *ngFor="let token of pagina.token">{{token | uppercase}}</span>
+            <span class="porcentaje" class="badge bg-success porcentaje" *ngIf="pagina.porcentaje < 50">Falopa al {{pagina.porcentaje}}%</span>
+            <span class="porcentaje" class="badge bg-warning porcentaje" *ngIf="pagina.porcentaje >= 50 && pagina.porcentaje <= 70">Falopa al {{pagina.porcentaje}}%</span>
+            <span class="porcentaje" class="badge bg-danger porcentaje" *ngIf="pagina.porcentaje > 70">Falopa al {{pagina.porcentaje}}%</span>
+          </div>
+          <hr>
+          <h5 class="card-title">{{pagina.nombre}}</h5>
+          <p class="card-text">{{pagina.descripcion}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div *ngIf="proyectosMostrar">
+  <app-cardsinfo [tokensinfo]="infoToken" [proyectoInfo]="proyectoInfo" (proyectoexit)="volverEvent(false)" (tokensinfoParent) = 'tokenprices($event)'></app-cardsinfo>
+</div>
